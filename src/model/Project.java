@@ -14,8 +14,8 @@ public class Project {
 //    private int totalRows;
 //    private int currentRows;
     private List<Yarn> yarns;
+    private List<Hook> hooks;
     private List<String> otherMaterials;
-    private double hookSize;
 
     // pattern or link to pattern?
 
@@ -34,6 +34,14 @@ public class Project {
             name = this.name;
             color = this.color;
             brand = this.brand;
+        }
+    }
+
+    public class Hook {
+        private double size;
+
+        public Hook(double size) {
+            size = this.size;
         }
     }
 }
