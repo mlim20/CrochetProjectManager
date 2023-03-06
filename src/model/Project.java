@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.*;
+import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,23 +26,80 @@ public class Project {
         otherMaterials = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public LocalDateTime getStartDateTime() {
+        return startDateTime;
+    }
+
+    public LocalDateTime getEndDateTime() {
+        return endDateTime;
+    }
+
+    public List<Yarn> getYarns() {
+        return yarns;
+    }
+
+    public List<Hook> getHooks() {
+        return hooks;
+    }
+
+    public List<String> getOtherMaterials() {
+        return otherMaterials;
+    }
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public void setStartDateTime(LocalDateTime ldt) {
+        startDateTime = ldt;
+    }
+
+    public void setEndDateTime(LocalDateTime ldt) {
+        endDateTime = ldt;
+    }
+
+    public void setYarns(List<Yarn> y) {
+        yarns = y;
+    }
+
+    public void setHooks(List<Hook> h) {
+        hooks = h;
+    }
+
+    public void setOtherMaterials(List<String> s) {
+        otherMaterials = s;
+    }
+
     private class Yarn {
         private String name;
         private Color color;
         private String brand;
 
         public Yarn(String name, Color color, String brand) {
-            name = this.name;
-            color = this.color;
-            brand = this.brand;
+            this.name = name;
+            this.color = color;
+            this.brand = brand;
         }
     }
 
     public class Hook {
         private double size;
-
         public Hook(double size) {
-            size = this.size;
+            this.size = size;
+        }
+    }
+
+    public class Pattern {
+        private String name;
+        private URL link;
+
+        public Pattern(String name, URL link) {
+            this.name = name;
+            this.link = link;
         }
     }
 }
